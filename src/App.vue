@@ -1,26 +1,62 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <AppPreloaderPage v-if="isLoading" />
+  <HeaderPage />
+ <main>
+  <router-view @loaded="hidePreloader" /> <!-- Listen for event to hide preloader -->
+ </main>
+  <FooterPage />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+import HeaderPage from "./components/HeaderPage.vue";
+import FooterPage from "./components/FooterPage.vue";
+import AppPreloaderPage from "./components/AppPreloaderPage.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HeaderPage,
+    FooterPage,
+    AppPreloaderPage,
+  },
+  setup() {
+    const isLoading = ref(true); // Set to true to show the preloader initially
+
+    // Function to hide the preloader
+    const hidePreloader = () => {
+      isLoading.value = false;
+    };
+
+    return {
+      isLoading,
+      hidePreloader
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+header{
+  flex-shrink: 0;
+}
+main{
+  flex-shrink: 1;
+}
+footer{
+  flex-shrink: 0;
+}
+
+
 </style>
