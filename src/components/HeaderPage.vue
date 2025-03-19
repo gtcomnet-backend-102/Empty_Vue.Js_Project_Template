@@ -1,7 +1,12 @@
-<template>
+<!-- <template>
   <nav class="navbar">
     <div class="logo">
-      <a href="#">Meta <span>AI</span></a>
+      <div class="footer-left">
+        <p>Rabbitlala</p>
+        <div class="image_container">
+          <img :src="require('@/assets/White Rabbitlala Logo.png')" alt="" style="width:20px;height:15px;"/>
+        </div>
+      </div>
     </div>
     <input type="checkbox" id="menu-toggle" ref="menuToggle" />
     <label for="menu-toggle" class="menu-icon">
@@ -156,4 +161,4 @@ export default {
   } */
 }
 /* Responsive */
-</style>
+</style> -->

@@ -1,13 +1,18 @@
-<template>
+<!-- <template>
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-left">
-        <p>&copy; 2025 My Company</p>
+        <p>&copy; 2025 Rabbitlala</p>
+        <div class="image_container">
+          <img :src="require('@/assets/White Rabbitlala Logo.png')" alt="" style="width:20px;height:15px;"/>
+        </div>
       </div>
       <div class="footer-center">
         <p>Privacy Policy | Terms of Service</p>
       </div>
-      <div class="footer-right">
+      
+
+      <div class="social_media">
         <p>Follow us:</p>
         <a href="#" class="social-icon">Facebook</a>
         <a href="#" class="social-icon">Twitter</a>
@@ -24,6 +29,11 @@ export default {
 </script>
 
 <style>
+.social_media{
+  display:flex;
+  flex-direction: row;
+  padding-right: 20px;
+}
 .footer {
   background-color: #333;
   color: white;
@@ -32,7 +42,6 @@ export default {
   position: sticky;
   bottom: 0;
 }
-
 
 .footer-content {
   display: flex;
@@ -60,14 +69,28 @@ export default {
 }
 
 .social-icon {
-  margin-left: 10px;
-  color: #fff;
-  text-decoration: none;
+    margin-left: 10px;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 6%;
 }
 
 .social-icon:hover {
   color: #f1c40f;
 }
+
+.footer-left {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.image_container {
+  width: 22px;
+  height: 24px;
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -93,4 +116,4 @@ export default {
     margin-left: 5px;
   }
 }
-</style>
+</style> -->
